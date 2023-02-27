@@ -131,7 +131,7 @@ Jorge se quiere ir de sistemas
     ```
     printInstructorsName()
     ```
-    Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
+    >Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
 
 - En este caso llamo a un ```string```:  
     ```
@@ -144,7 +144,7 @@ Jorge se quiere ir de sistemas
     printInstructorsName(name: "jalava")
     ```
 
-    → A mas generica la función, mejor, porque así puedo ser más flexible a la hora de llamarla para otros objetivos.
+    >A mas generica la función, mejor, porque así puedo ser más flexible a la hora de llamarla para otros objetivos.
 
 ### Segundo ejemplo
 - Quiero crear una función llamada ```add``` que va a realizar una operación matematica:
@@ -162,7 +162,7 @@ Jorge se quiere ir de sistemas
     ```
     add(firstNumber: 12, to: 38)
     ```
-    Llamo a la función y le doy los datos usando la etiqueta de parámetro.  
+   > Llamo a la función y le doy los datos usando la etiqueta de parámetro.  
 - ¿Por que aparece ```firstNumber``` como etiqueta de argumento pero no ```secondNumber```?  
   - Porque ```secondNumber``` no es una etiqueta de argumento, sino un nombre de parámetro.  
 ## 5. If .. Else
@@ -171,7 +171,7 @@ Jorge se quiere ir de sistemas
     ```
     var isDarkModeOn = false
     ```
-  - Cuando nombremos ```bool```s, intentaremos que sea lo más descriptivo posible para que sea más legible.
+  > Cuando nombremos ```bool```s, intentaremos que sea lo más descriptivo posible para que sea más legible.
 
 - El operando ```=``` usado dos veces seguidas se usa si para comprobar la validez de un ```statment```:  
     ```
