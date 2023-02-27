@@ -13,8 +13,6 @@ Jorge se quiere ir de sistemas
 ### 9. Switch
 ### 10. Basic Operators
 ### 11. Optionals  
-=============================== 
-
 # Fundamentos
 ## 1. Arrays
 ### Un array es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
@@ -119,54 +117,55 @@ Jorge se quiere ir de sistemas
 
 ## 4. Functions
 
-// como las funciones hacen algo, tienen que empezar con un verbo.
-// siempre tienen un parentesis al final porque ahi van los parametros, si los tuviera
-// scope: todo lo que haya entre los corchetes
+- Como las funciones hacen algo, tienen que empezar con un verbo.  
+- Siempre tienen un parentesis al final porque ahi van los parametros, si los tuviera.
+- El ```scope``` es todo lo que haya entre los corchetes de la función.  
+- Esta función printeará lo que hay dentro del operando ```print```: 
+    ```
+    func printInstructorsName() {
+        print("jfalava")
+    }
+    ```
 
-// func printInstructorsName() {
-//    print("jfalava")
-//}
+- Y llamo las funciones por su nombre y ```()```:  
+    ```
+    printInstructorsName()
+    ```
+    Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
 
-// llamo las funciones por su nombre
+- En este caso llamo a un ```string```:  
+    ```
+    func printInstructorsName(name: String) {
+        print(name)
+    }
+    ```
+- Y llamo a la funcion:
+    ```
+    printInstructorsName(name: "jalava")
+    ```
 
-// printInstructorsName()
+    → A mas generica la función, mejor, porque así puedo ser más flexible.
 
-// y esto me saca lo que hay entre los corchetes
-
-
-// pero esto esta hardcodeado. si quiero algo usable, tengo que, en parametros, indicar el tipo de cosa que quiero llamar con la funcion:
-
-    //en este caso llamo a un string
-func printInstructorsName(name: String) {
-    // y ya no le digo que quiero que printee mi nombre, le digo que imprima un nombre que le indicare mas adelante cuando llame a la funcion
-    print(name)
-}
-
-// y llamo a mi funcion:
-
-printInstructorsName(name: "jalava")
-
-// a mas generico la funcion, mejor, porque asi puedo ser mas flexible.
-
-// segundo ejemplo //
-// quiero crear una funcion llamada "add" que va a realizar una operacion matematica:
-    // la "->" significa que al ejecutarse, devuelve tipo de dato, en este caso un int
-    // esta funcion coge un numero entero, coge un segundo numero entero y devuelve otro numero entero
-        // firstNumber y secondNumber son las etiquetas de parametros, las usare para indicar que valores tomaran para la ejecucion de la funcion
-                        // este "to" es una etiqueta de argumento, que ayuda al codigo a ser mas legible y que sera usada en el call site, cuando ejecute mi funcion. puedo no usarla, pero mejor si
-func add(firstNumber: Int, to secondNumber: Int) -> Int {
-    // sumo:
-    let sum = firstNumber + secondNumber
-    // el resultado lo requiero con un return y el valor de la constante, en este caso sum
-    return sum
-}
-
-// este es el call site
-// por que no necesito una etiqueta de argumento al principio? no hace falta
-// por que aparece firstNumber como etiqueta de argumento? porque no he definido nada. siempre saldra si no añado algo antes
-add(firstNumber: 12, to: 38)
-
-
+### Segundo ejemplo
+- Quiero crear una función llamada ```add``` que va a realizar una operación matematica:
+    ```
+    func add(firstNumber: Int, to secondNumber: Int) -> Int {
+        let sum = firstNumber + secondNumber
+        return sum
+    }
+    ```
+  - El operando ``->`` significa que al ejecutarse, devuelve tipo de dato, en este caso un ```int```.  
+  - Esta función coge un numero entero, coge un segundo numero entero y devuelve otro numero entero, siempre definidos por el tipo de datos: ```Int```.
+  - ```firstNumber``` y ```secondNumber``` son las etiquetas de parámetros, las usaré para indicar que valores tomaran para la ejecucion de la función.  
+  - El operando ```to``` es una etiqueta de argumento, que ayuda al codigo a ser más legible y que sera usada en el ```call site```, cuando ejecute mi función. No requerida, si apreciada.  
+- Este es el ```call site```:
+    ```
+    add(firstNumber: 12, to: 38)
+    ```
+- ¿Por que no necesito una etiqueta de argumento al principio?  
+  - No hace falta.  
+- ¿Por que aparece firstNumber como etiqueta de argumento?  
+  - Porque no he definido nada. siempre saldra si no añado algo antes.  
 ## 5. If .. Else
 ## 6. For Loops
 ## 7. Enum
