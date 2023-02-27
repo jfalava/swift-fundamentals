@@ -1,3 +1,1 @@
-# Swift Fundamentals
-
-### Documentation
+# Hello
