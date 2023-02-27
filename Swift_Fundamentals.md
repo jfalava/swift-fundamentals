@@ -90,12 +90,12 @@ Jorge se quiere ir de sistemas
     ```  
 
 ## 3. Dictionary
-### Esto es como una base de datos o como un fichero .json
+### Una base de datos, kinda
 - Defino que tipo de constante es y que contiene la constante:  
     ```
     let devices: [String: String]
     ```  
-- Declaro que la constante ```devices``` tiene como tipo de ```key``` (nombre de la fila) un ```string``` (una palabra) y cuyo valor es de tipo ```string```.  
+    > Declaro que la constante ```devices``` tiene como tipo de ```key``` (nombre de la fila) un ```string``` (una palabra) y cuyo valor es de tipo ```string```.  
 - Añado valores al diccionario:  
     ```
     let devices: [String: String] = [
@@ -216,6 +216,65 @@ Jorge se quiere ir de sistemas
     }
     ```
 ## 6. For Loops
+
+- Defino un array:
+    ```
+    let allStars = ["kekw", "lul", "xdd", "Concern", "xffing"]
+    ```
+    > Swift no necesita en este caso que le indique que es un array de ```string```s; al ver que todo son palabras.  
+
+    > No necesitas indicar que clase de cosas printeas, pero lo haces más legible si pones nombres que indican.
+
+- El siguiente loop leerá todo el array desde el principio, item por item:
+    ```
+    for emote in allStars {
+        print(emote)
+    }
+    ```
+    > Aquí le pido que printee el contenido del array. Como no le doy parada, lo hará hasta que termine de leerlo todo.
+
+- Puedo pedirle que prinéee algo en especifico:
+    ```
+    for emote in allStars where emote == "xdd" {
+        print(emote)
+    }
+    ```
+    > ```emote``` puede ser cualquier palabra, al ser un nombre de parámetro.  
+
+- Si quiero leer un array un numero determinado de veces, usare un rango (siendo n el valor posicional del array):
+    ```
+    0...n
+    ```  
+    > Que leerá desde el primer valor hasta el valor n  
+    ```
+    0..>n
+    ```
+    > Que leerá desde el valor 0 hasta el valor posterior a n
+    ```
+    0..<n
+    ```
+    > Que leerá desde el valor 0 hasta el valor anterior a n  
+
+- El siguiente codigo printeará todos los valores del array ```i``` hasta llegar a la posición 24:
+    ```
+    for i in 0..<25 {
+        print(i)
+    }
+    ```
+    > Usar ```i``` es estándar para nombrar arrays.  
+
+- Puedo hacer mas cosas con este array, por ejemplo:
+    > Crear un array vacio y crear un loop donde, con una función de numeros aleatorios, generar un número aleatorio y añadirlo al array una cantidad determinada de veces:
+    ```
+    var randomInts: [Int] = []
+    for _ in 0..<25 {
+        let randomNumber = Int.random(in: 0...100) 
+        randomInts.append(randomNumber)
+    }
+    print(randomInts)
+    ```
+    > 1. Creo una variable llamada ```randomNumber``` y le asigno un valor aleatorio entre 0 y 100.
+    > 2. Añado con ```append``` al array lo generado por la variable ```randomNumber```.
 ## 7. Enum
 ## 8. Enum & Raw Value
 ## 9. Switch
