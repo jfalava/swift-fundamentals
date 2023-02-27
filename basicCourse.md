@@ -16,7 +16,7 @@ Jorge se quiere ir de sistemas
 # Fundamentos
 ## 1. Arrays
 ### Un array es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
-- Defino el array con nombre ages que tiene enteros:  
+- Defino el array con nombre ```ages``` que tiene enteros:  
     ```
     var ages: [Int] = [13, 24, 27, 45, 54]
     ```
@@ -139,12 +139,12 @@ Jorge se quiere ir de sistemas
         print(name)
     }
     ```
-- Y llamo a la funcion:
+- Y llamo a la funcion indicándole que quiero printear el valor ```jfalava```:
     ```
     printInstructorsName(name: "jalava")
     ```
 
-    → A mas generica la función, mejor, porque así puedo ser más flexible.
+    → A mas generica la función, mejor, porque así puedo ser más flexible a la hora de llamarla para otros objetivos.
 
 ### Segundo ejemplo
 - Quiero crear una función llamada ```add``` que va a realizar una operación matematica:
@@ -157,16 +157,64 @@ Jorge se quiere ir de sistemas
   - El operando ``->`` significa que al ejecutarse, devuelve tipo de dato, en este caso un ```int```.  
   - Esta función coge un numero entero, coge un segundo numero entero y devuelve otro numero entero, siempre definidos por el tipo de datos: ```Int```.
   - ```firstNumber``` y ```secondNumber``` son las etiquetas de parámetros, las usaré para indicar que valores tomaran para la ejecucion de la función.  
-  - El operando ```to``` es una etiqueta de argumento, que ayuda al codigo a ser más legible y que sera usada en el ```call site```, cuando ejecute mi función. No requerida, si apreciada.  
+  - El operando ```to``` es una etiqueta de argumento, que ayuda al codigo a ser más legible y que sera usada en el ```call site``` (la llamada de la función), cuando ejecute mi función. No requerida, si apreciada.  
 - Este es el ```call site```:
     ```
     add(firstNumber: 12, to: 38)
     ```
-- ¿Por que no necesito una etiqueta de argumento al principio?  
-  - No hace falta.  
-- ¿Por que aparece firstNumber como etiqueta de argumento?  
-  - Porque no he definido nada. siempre saldra si no añado algo antes.  
+    Llamo a la función y le doy los datos usando la etiqueta de parámetro.  
+- ¿Por que aparece ```firstNumber``` como etiqueta de argumento pero no ```secondNumber```?  
+  - Porque ```secondNumber``` no es una etiqueta de argumento, sino un nombre de parámetro.  
 ## 5. If .. Else
+### "If" y "Else" se usan para crear lógica en una operación.
+- Defino ```statement```s con el operando ```=```:  
+    ```
+    var isDarkModeOn = false
+    ```
+  - Cuando nombremos ```bool```s, intentaremos que sea lo más descriptivo posible para que sea más legible.
+
+- El operando ```=``` usado dos veces seguidas se usa si para comprobar la validez de un ```statment```:  
+    ```
+    if isDarkModeOn == false {
+        print("nay")
+    }
+    ```
+
+- Los ```if``` asumen que lo que haya dentro del ```scope``` es siempre ```true```:  
+    ```
+    if isDarkModeOn {
+        print("yep")
+    } else {
+        print("lmao")
+    }
+    ```
+### Ejemplo
+- Primero defino una serie de variables:
+    ```
+    var myHighScore = 55
+    var yourHighScore = 447
+    var highScore = 1
+    ```
+- Creo una regla lógica con ```ìf``` y ```else``` que hará una u otra cosa dependiendo del valor:
+    ```
+    if myHighScore > yourHighScore {
+        print("me")
+    } else {
+        print("you")
+    }
+    ```
+- Puedo anidar ```if```s que cogerán el valor y los compararán con varios supuestos:
+    ```
+    if highScore > 500 {
+        print("nice")
+    } else if highScore > 250 {
+        print("meh")
+    } else if highScore > 110 {
+        print("kekw")
+    } else {
+        print("XDD")
+    }
+    ```
 ## 6. For Loops
 ## 7. Enum
 ## 8. Enum & Raw Value
