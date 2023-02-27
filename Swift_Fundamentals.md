@@ -215,7 +215,8 @@ Jorge se quiere ir de sistemas
         print("XDD")
     }
     ```
-## 6. For Loops
+## 6. For loops
+### Un loop hecho con el operando "for" me permitirá trabajar con unos datos determinados un número de veces determinado.
 
 - Defino un array:
     ```
@@ -245,15 +246,15 @@ Jorge se quiere ir de sistemas
     ```
     0...n
     ```  
-    > Que leerá desde el primer valor hasta el valor n  
+    Que leerá desde el primer valor hasta el valor n  
     ```
     0..>n
     ```
-    > Que leerá desde el valor 0 hasta el valor posterior a n
+    Que leerá desde el valor 0 hasta el valor posterior a n
     ```
     0..<n
     ```
-    > Que leerá desde el valor 0 hasta el valor anterior a n  
+    Que leerá desde el valor 0 hasta el valor anterior a n  
 
 - El siguiente codigo printeará todos los valores del array ```i``` hasta llegar a la posición 24:
     ```
@@ -264,7 +265,7 @@ Jorge se quiere ir de sistemas
     > Usar ```i``` es estándar para nombrar arrays.  
 
 - Puedo hacer mas cosas con este array, por ejemplo:
-    > Crear un array vacio y crear un loop donde, con una función de numeros aleatorios, generar un número aleatorio y añadirlo al array una cantidad determinada de veces:
+  - Crear un array vacio y crear un loop donde, con una función de numeros aleatorios, generar un número aleatorio y añadirlo al array una cantidad determinada de veces:
     ```
     var randomInts: [Int] = []
     for _ in 0..<25 {
@@ -273,10 +274,82 @@ Jorge se quiere ir de sistemas
     }
     print(randomInts)
     ```
-    > 1. Creo una variable llamada ```randomNumber``` y le asigno un valor aleatorio entre 0 y 100.
-    > 2. Añado con ```append``` al array lo generado por la variable ```randomNumber```.
+    1. Defino la variable ```randomInts```, indicándole que contiene ```Int```s y dejándolo vacío.
+    Defino el loop. Uso ```_``` para definir el loop por no importar realmente el nombre que tenga, por que no aparecerá en el código y porque es estándar su uso para este caso.
+    1. Creo una variable llamada ```randomNumber``` y le asigno un valor aleatorio entre 0 y 100 dentro del ```scope```del loop, para que solo se ejecute entonces.
+    1. Añado con ```append``` al array lo generado por la variable ```randomNumber```.
+
 ## 7. Enum
-## 8. Enum & Raw Value
+### Con "enum" puedo crear una tabla de datos cuyo contenido es fijo.
+- Defino la lista de ```enum```:  
+    ```
+    enum Emotes {
+        case kekw
+        case Concern
+        case xdding
+        case xffing
+        case xddTree
+    }
+    ```
+- Puedo hacerlo tambien separando los valores de ```case``` por comas:
+    ```
+    enum Emotes { case kekw, Concern... } 
+    ```
+
+ - ```enum``` puede considerarse un nuevo tipo de dato, como ```Int``` o ```String``` a la hora de definirlo en otra parte del codigo.
+ - Puedo llamarlo en una funcion:
+    ```
+    func getOpinion(on emote: Emotes) {
+        if emote == .kekw {
+            print("bien")
+        } else if emote == .Concern {
+            print("dalamud?")
+        } else if emote == .xdding {
+            print("xffing")
+        } else if emote == .xffing {
+            print("xdding")
+        } else {
+            print("chills brother")
+        }
+    }
+    ```
+- Y puedo llamarlo utilizando ```.valordelcase```:
+    ```
+    getOpinion(on: .xddTree)
+    ```
+### rawValue
+- Defino el ```enum```:
+    > Para darle un valor a cada ```case``` uso el operando ```= "contenido"```, incluidas comillas.
+    ```
+    enum Emotes: String {
+        case kekw       = "bien"
+        case Concern    = "dalamud?"
+        case xdding     = "xffing"
+        case xffing     = "xdding"
+        case xddTree    = "chills brother"
+    } 
+    ```
+    > - Los ```enum```s pueden tener tipos de valores de todo tipo, por ejemplo, ```string```, ```Int```, ```float```... y necesitan ser definidos.  
+    > - Todos los ```enum``` tienen que tener el mismo tipo de valor.
+    > - Puedo identar el código para que sea mas legible, no afecta a la ejecución.
+- Para llamar al ```enum``` puedo crear una función:  
+    ```
+    func getOpinion(on emote: Emotes){
+        print(emote.rawValue)
+    }
+    ```
+    En este caso, la funcion ```getOpinion``` cogerá del ```enum``` llamado ```Emotes``` el valor del ```case``` que le pida cuando la llame, printeando ```rawValue```.
+ 
+  Y después llamarla:  
+    ```
+    getOpinion(on: .xddTree)
+    ```
+    Que me printeará el valor del contenido del ```case```:
+    ```
+    chills brother
+    ```
+
+
 ## 9. Switch
 ## 10. Basic Operators
 ## 11. Optionals
