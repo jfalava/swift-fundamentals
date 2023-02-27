@@ -9,10 +9,9 @@ Jorge se quiere ir de sistemas
 ### 5. If .. Else
 ### 6. For Loops
 ### 7. Enum
-### 8. Enum & Raw Value
-### 9. Switch
-### 10. Basic Operators
-### 11. Optionals  
+### 8. Switch
+### 9. Basic Operators
+### 10. Optionals  
 # Fundamentos
 ## 1. Arrays
 ### Un array es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
@@ -329,7 +328,7 @@ Jorge se quiere ir de sistemas
         case xddTree    = "chills brother"
     } 
     ```
-    > - Los ```enum```s pueden tener tipos de valores de todo tipo, por ejemplo, ```string```, ```Int```, ```float```... y necesitan ser definidos.  
+    > - Para usar ```rawValue``` los ```enum```s pueden tener tipos de valores de todo tipo, por ejemplo, ```string```, ```Int```, ```float```... y necesitan ser definidos.  
     > - Todos los ```enum``` tienen que tener el mismo tipo de valor.
     > - Puedo identar el código para que sea mas legible, no afecta a la ejecución.
 - Para llamar al ```enum``` puedo crear una función:  
@@ -338,7 +337,7 @@ Jorge se quiere ir de sistemas
         print(emote.rawValue)
     }
     ```
-    En este caso, la funcion ```getOpinion``` cogerá del ```enum``` llamado ```Emotes``` el valor del ```case``` que le pida cuando la llame, printeando ```rawValue```.
+    En este caso, la funcion ```getOpinion``` cogerá del ```enum``` llamado ```Emotes``` el valor del ```case``` que le pida cuando la llame, printeando su ```rawValue```, que hemos definido al escribir el ```enum```.
  
   Y después llamarla:  
     ```
