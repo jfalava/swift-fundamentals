@@ -292,10 +292,10 @@ Jorge se quiere ir de sistemas
     ```
 - Puedo hacerlo tambien separando los valores de ```case``` por comas:
     ```
-    enum Emotes { case kekw, Concern... } 
+    enum Emotes { case kekw, Concern, xdding, xffing, xddTree } 
     ```
 
- - ```enum``` puede considerarse un nuevo tipo de dato, como ```Int``` o ```String``` a la hora de definirlo en otra parte del codigo.
+ - ```enum``` puede considerarse un nuevo tipo de dato, como ```Int``` o ```String``` a la hora de definirlo en otra parte del código.
  - Puedo llamarlo en una funcion:
     ```
     func getOpinion(on emote: Emotes) {
