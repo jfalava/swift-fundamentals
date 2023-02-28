@@ -53,3 +53,4 @@ let edadJoven = [1, 2, 3]
 let todasEdades = edadJoven + edadViejo
 
 print(todasEdades)
+
