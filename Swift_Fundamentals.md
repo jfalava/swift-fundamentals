@@ -14,7 +14,7 @@ Jorge se quiere ir de sistemas
 ### 10. Optionals  
 # Fundamentos
 ## 1. Arrays
-### Un array es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
+### Un ```array``` es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
 - Defino el array con nombre ```ages``` que tiene enteros:  
     ```
     var ages: [Int] = [13, 24, 27, 45, 54]
@@ -61,7 +61,7 @@ Jorge se quiere ir de sistemas
     ```  
 
 ## 2. Sets
-### Sets son como los arrays: una estructura de datos que almacena colecciones de datos, pero no puede tener elementos repetidos y no tiene orden.  
+### ```Set```s son como los ```array```s: una estructura de datos que almacena colecciones de datos, pero no puede tener elementos repetidos y no tiene orden.  
 
 - Declaro el set asi:  
     ```
@@ -165,7 +165,7 @@ Jorge se quiere ir de sistemas
 - ¿Por que aparece ```firstNumber``` como etiqueta de argumento pero no ```secondNumber```?  
   - Porque ```secondNumber``` no es una etiqueta de argumento, sino un nombre de parámetro.  
 ## 5. If .. Else
-### "If" y "Else" se usan para crear lógica en una operación.
+### ```If``` y ```Else``` se usan para crear lógica en una operación.
 - Defino ```statement```s con el operando ```=```:  
     ```
     var isDarkModeOn = false
@@ -215,7 +215,7 @@ Jorge se quiere ir de sistemas
     }
     ```
 ## 6. For loops
-### Un loop hecho con el operando "for" me permitirá trabajar con unos datos determinados un número de veces determinado.
+### Un loop hecho con el operando ```for``` me permitirá trabajar con unos datos determinados un número de veces determinado.
 
 - Defino un array:
     ```
@@ -279,7 +279,7 @@ Jorge se quiere ir de sistemas
     1. Añado con ```append``` al array lo generado por la variable ```randomNumber```.
 
 ## 7. Enum
-### Con "enum" puedo crear una tabla de datos cuyo contenido es fijo.
+### Con ```enum``` puedo crear una tabla de datos cuyo contenido es fijo.
 - Defino la lista de ```enum```:  
     ```
     enum Emotes {
@@ -349,7 +349,7 @@ Jorge se quiere ir de sistemas
     ```
 
 ## 9. Switch
-### "Switch" me permitirá controlar el flujo de un programa dependiendo de una serie de condiciones dependiendo del valor de una variable.
+### ```Switch``` me permitirá controlar el flujo de un programa dependiendo de una serie de condiciones dependiendo del valor de una variable.
 
 - Defino un ```enum``` que luego usaré para definir la función que contenga ```switch```:   
     ```
@@ -419,8 +419,8 @@ Jorge se quiere ir de sistemas
     ```
     > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
 ## 10. Basic Operators
-### Operaciones aritméticas
-- Podemos hacer todo tipo de operaciones aritméticas en Swift:
+### Operaciones aritméticas 101
+- Podemos hacer todo tipo de operaciones aritméticas en Swift. Primero, defino una serie de variables de ejemplo:
     ```
     let valueOne = 55
     let valueTwo = 88
@@ -491,5 +491,51 @@ Jorge se quiere ir de sistemas
     ```
     > En el ejemplo anterior podemos recuperar el valor ```todasEdades``` con ```print(todasEdades)``` que devolverá ```[1, 2, 3, 99, 88, 77]```.
 
-
 ## 11. Optionals
+### Métodos de protección para valores ```nil``` a la hora de operar con valores temporales.
+> Swift te da la opción de hacer cosas con valores vacios y retornos sin datos.  
+> Ojo: no podemos no hacer algo con valores vacios: esto provocará crasheos o runtime errors.
+- Defino una variable para el ejemplo:
+    ```
+    var ages: [Int] = []
+    ```
+- Además lo organizamos de manera ascendente:
+    ```
+    ages.sort()
+    ```
+- Creo una constante donde los valores del ```array``` están organizados:
+    ```
+    let oldestAge = ages.last
+    ```
+     > Como en el ejemplo el ```array``` está vacío devolverá ```nil``` al ejecutarse.  
+
+## Hay diferentes maneras de tratar un valor ```nil```:
+
+### ```If let```
+- Primero compruebo si los valores que busco son los correctos para lo que quiero hacer:
+    ```
+    if let oldestAge = ages.last  {
+        print("The oldest age is \(oldestAge)")
+    } else {
+        print("no hay valores en el array")
+    }
+    ```
+    * Este ejemplo nunca mostrará datos porque el ```array``` está vacío.  
+    * Si quiero poner un valor dentro una variable uso el operando ```\()```.  
+    * Si el ```array``` tuviera valores, habría printeado ```"The oldest age is [valor del array]"```, pero en este caso printeará ```"no hay valores en el array"```.  
+### Dándole un valor a la variable en caso de que este sea ```nil```:
+    ```if let oldestAge = ages.last ?? 999```
+### Con el operando ```guard```:
+```
+func getOldestAge() {
+    guard let oldestAge = ages.last else {
+        return print("nope") // en el caso de que sea nil, directamente corta el codigo y ejecuta loque haya en este scope
+    }
+    print("\(oldestAge) es el mas viejo") // y si hay codigo ignorara ese primer scope y ejecutara lo que haya despues, en toda la funcion
+}
+getOldestAge()
+```
+### Usando el protocolo ```force unwrap```: usando el valor del array sin importar que sea
+Usaremos el el operando ```!``` al final del valor.
+Si el valor es ```nil```, provocará un runtime error y el programa crasheará.  
+```let oldestAges = ages.last!```
