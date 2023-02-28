@@ -419,7 +419,7 @@ Jorge se quiere ir de sistemas
     ```
     > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
 ## 10. Basic Operators
-### 
+### Operaciones aritméticas
 - Podemos hacer todo tipo de operaciones aritméticas en Swift:
     ```
     let valueOne = 55
@@ -431,49 +431,65 @@ Jorge se quiere ir de sistemas
     let valueTwotwo: Double = 88
     ```
     > La diferencia entre ```float``` y ```double``` es la precisión: 6 decimales a 15.  
+
+
+- Si hacemos operaciones aritméticas con enteros, si la operación tiene decimales, Swift ignorará todos los decimales y solo mostrará el entero:  
+    ```
+    let sum = valueOneone / valueTwotwo
+    let div = valueOne / valueTwo
+    ```
+    > El nombre de la constante no importa, pero está bien que sea descriptivo para que el código sea más legible.
+
+- ```modulo``` es un operando que saca el resto de una división:
+    ```
+    let modulo = valueOne % valueTwo
+    ```
+- El operando ```==``` compara dos valores. Los valores tienen que ser del mismo tipo: (```int```, ```double```, ```float```...):  
+    ```
+    valueTwo == valueOne
+    ```
+
+- Con el operando ```!``` antes de una constante podemos comprobar si algo es lo contrario.  
+- Podemos asignar a una variable un valor ```bool``` y Swift sabrá responder en consecuencia cuando se le pregunte:  
+    ```
+    var isDarkModeOn = false
+    if !isDarkModeOn {
+        print("pero co animal")
+    }
+    ```
+    > En el ejemplo, la constante ```isDarkModeOn``` tiene el valor ```false```. Compruebo con ```if``` si el valor es ```true``` o no, pero usando el operando ```!``` podré comprobar si es ```false``` o no.  
+
+
+- Comparaciones usando el operando ```if``` tienen que ser tambien del mismo tipo. Podemos también encadenarlo con ```bool```s:  
+    ```
+    if valueTwo > valueOne && !isDarkModeOn {
+        print("quelocura")
+    }
+    ```
+    > Si ```valueTwo``` es mayor que ```valueOne``` y además ```isDarkModeOn``` es ```false``` (gracias a que Swift ya lo sabe) printeará el valor indicado.  
+- Podemos definir un ```if``` donde sólo una de las condiciones sea verdad con el operando ```||```:
+    ```
+    if valueOne == valueTwo || !isDarkModeOn {
+        print("yep")
+    }
+    ```
+    > En este ejemplo, a diferencia del anterior, si los dos ```value``` son iguales O ```isDarkModeOn``` es ```false```printeará el valor indicado.  
+
+- Podemos añadir y quitar con los operandos ```+``` y ```-``` otro tipo de operandos, como ```strings```:
+    ```
+    let saludo = "Hi"
+    let nombre = "jorge"
+    print(saludo + " " + nombre)
+    ```
+    > Si quiero un espacio, como en el ejemplo anterior, lo añado como si fuera un ```string``` cualquiera, entre comillas. El ejemplo devolverá ```"Hi jorge"```.
     
-// el nombre de la variable es irrelevante
-// si hacemos operaciones aritmeticas con enteros, si la operacion tiene decimales, swift ignorara todos los decimales y solo mostrara el entero
-let sum = valueOneone / valueTwotwo
-let div = valueOne / valueTwo
+- También podemos realizar este tipo de operaciones con ```array```s:
+    ```
+    let edadViejo = [99, 88, 77]
+    let edadJoven = [1, 2, 3]
+    let todasEdades = edadJoven + edadViejo
+    ```
+    > En el ejemplo anterior podemos recuperar el valor ```todasEdades``` con ```print(todasEdades)``` que devolverá ```[1, 2, 3, 99, 88, 77]```.
 
-// modulo es una operacion que saca el resto de una division
-let modulo = valueOne % valueTwo
-
-// el operando == compara dos valores. los valores tienen que ser del mismo tipo (int, double, float)
-valueTwo == valueOne
-
-
-// con el operando ! antes de una constante podemos comprobar si algo es lo contrario
-// podemos asignar a una variable un valor bool y swift sabra responder en consecuencia cuando se le pregunte.
-var isDarkModeOn = false
-if !isDarkModeOn {
-    print("pero co animal")
-}
-
-// comparaciones en ifs tienen que ser tambien del mismo tipo. podemos tambien encadenarlo con bools.
-if valueTwo > valueOne && !isDarkModeOn {
-    print("quelocura")
-}
-
-// podemos hacer un if donde solo una de las condiciones sea verdad con el operando ||
-
-if valueOne == valueTwo || !isDarkModeOn {
-    print("yep")
-}
-
-// podemos añadir y quitar con +-= otro tipo de operandos, como strings:
-
-let saludo = "Hi"
-let nombre = "jorge"
-print(saludo + " " + nombre) // si quiero un espacio, lo añado como si fuera un string cualquiera
-
-// o arrays:
-
-let edadViejo = [99, 88, 77]
-let edadJoven = [1, 2, 3]
-let todasEdades = edadJoven + edadViejo
-
-print(todasEdades)
 
 ## 11. Optionals
