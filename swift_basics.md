@@ -1,6 +1,5 @@
 # Swift Fundamentals
-Jorge se quiere ir de sistemas, así que aprende a escribir en ```Markdown``` y luego en ```Swift```.  
-
+The basics.
 # Contenidos
 <a href="#arrays"><h3>1. Arrays</h3></a>
 <a href="#sets"><h3>2. Sets</h3></a>
