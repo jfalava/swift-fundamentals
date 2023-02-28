@@ -348,7 +348,75 @@ Jorge se quiere ir de sistemas
     chills brother
     ```
 
-
 ## 9. Switch
+### "Switch" me permitirá controlar el flujo de un programa dependiendo de una serie de condiciones dependiendo del valor de una variable.
+
+- Defino un ```enum``` que luego usaré para definir la función que contenga ```switch```:   
+    ```
+    enum Emotes {
+        case kekw
+        case Concern
+        case xdding
+        case xffing
+        case xddTree
+    }
+    ``` 
+- Con este ```enum``` creo una función con llamada ```getOpinion``` con el operando ```switch```:
+    ```
+    func getOpinion(on emote: Emotes){
+        switch emote {
+        case .kekw:
+            print("bien")
+        case .Concern:
+            print("dalamud?")
+        case .xdding:
+            print("xffing")
+        case .xffing:
+            print("xdding")
+        case .xddTree:
+            print("chills brother")
+        }
+    }
+    ```
+    Esta función, que será llamada con:
+    ```
+    nombreFuncion(nombreArgumento: .valorDelCase)
+    ```
+     Devolverá el valor que hay en el ```scope``` de cada ```case```, en este caso una función ```print```.
+    > En el ejemplo, ```getOpinion(on: .xddTree)``` devolverá ```print("chills brother")```.
+ 
+- Puedo crear un ```switch``` sin un ```enum```, pero necesito indicar todos los posibles modos:  
+    ```
+    let matchmakingRank = 856
+    func determinePlayerLeague(from rank: Int) {
+        switch rank {
+        case 0:
+            print ("Play the game to determine your league")
+        case 1..<50:
+            print ("You are in BRONZE League")
+        case 50..<100:
+            print ("You are in SILVER League")
+        case 100..<200:
+            print ("You are in GOLD League")
+        default:
+            print ("You are in a league of your own. We don't know where you are")
+        }
+    }
+    ```
+    1. Primero creo una variable para almacenar el valor que quiero comprobar.  
+    2. Al definir la función, indico que clase de valor estoy manejando en la variable.  
+    3. En este caso, uso en los ```case``` un rango de valores (porque esto usando un ```Int```) que quiero comprobar.    
+    > En el caso de tener disponible un ```enum``` que comprobar, se cuantos ```case``` tiene que haber.
+    
+    En el caso del segundo ejemplo, donde no hay un ```enum``` donde mirar, tengo que definir un valor por defecto:
+    ```
+    default
+    ```  
+    No tener un valor por defecto y la función recibir algún tipo de valor que no se incluya provocará un fallo de runtime.  
+    Podemos llamar a la función con:
+    ```
+    nombreFuncion(from: nombreVariableLlamadaEnSwitch)
+    ```
+    > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
 ## 10. Basic Operators
 ## 11. Optionals
