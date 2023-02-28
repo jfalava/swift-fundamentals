@@ -523,25 +523,29 @@ Jorge se quiere ir de sistemas
     * Este ejemplo nunca mostrará datos porque el ```array``` está vacío.  
     * Si quiero poner un valor dentro una variable uso el operando ```\()```.  
     * Si el ```array``` tuviera valores, habría printeado ```"The oldest age is [valor del array]"```, pero en este caso printeará ```"no hay valores en el array"```.  
+
 ### Dándole un valor a la variable en caso de que este sea ```nil```:
-```
-if let oldestAge = ages.last ?? 999
-```
+    ```
+    if let oldestAge = ages.last ?? 999
+    ```
+    
 ### Con el operando ```guard```:
-```
-func getOldestAge() {
-    guard let oldestAge = ages.last else {
-        return print("nope")
+
+    ```
+    func getOldestAge() {
+        guard let oldestAge = ages.last else {
+            return print("nope")
+        }
+        print("\(oldestAge) es el mas viejo")
     }
-    print("\(oldestAge) es el mas viejo")
-}
-getOldestAge()
-```
-> En el caso de que sea ```nil```, directamente detiene la ejecución del código y ejecuta lo que haya en el ```scope``` de ```return```  
-> Y si hay algo diferente a un valor ```nil``` ignorará el contenido del ```scope``` de ```return``` (en este caso, ```print (nope)```) y ejecutará lo que haya en el segundo ```scope```
-### Usando el protocolo ```force unwrap```: usando el valor del array sin importar que sea
-- Usaremos el el operando ```!``` al final del valor.
-- Si el valor es ```nil```, provocará un runtime error y el programa crasheará.  
-```
-let oldestAges = ages.last!
-```
+    ```
+    > Llamaremos a la función con ```getOldestAge()```.  
+    > En el caso de que sea ```nil```, directamente detiene la ejecución del código y ejecuta lo que haya en el ```scope``` de ```return```.  
+    > Y si hay algo diferente a un valor ```nil``` ignorará el contenido del ```scope``` de ```return``` (en este caso, ```print (nope)```) y ejecutará lo que haya en el segundo ```scope```
+    
+### Usando el protocolo ```force unwrap```: usando el valor del ```array sin importar que sea.
+    - Usaremos el el operando ```!``` al final del valor.
+    - Si el valor es ```nil```, provocará un runtime error y el programa crasheará.  
+    ```
+    let oldestAges = ages.last!
+    ```
