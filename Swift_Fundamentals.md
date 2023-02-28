@@ -1,24 +1,26 @@
 # Swift Fundamentals
-Jorge se quiere ir de sistemas  
+Jorge se quiere ir de sistemas, así que aprende a escribir en ```Markdown``` y luego en ```Swift```.  
 
 # Contenidos
-### 1. Arrays
-### 2. Sets
-### 3. Dictionary
-### 4. Functions
-### 5. If .. Else
-### 6. For Loops
-### 7. Enum
-### 8. Switch
-### 9. Basic Operators
-### 10. Optionals  
+<a href="#arrays"><h3>1. Arrays</h3></a>
+<a href="#sets"><h3>2. Sets</h3></a>
+<a href="#dictionary"><h3>3. Dictionary</h3></a>
+<a href="#functions"><h3>4. Functions</h3></a>
+<a href="#ifelse"><h3>5. If .. Else</h3></a>
+<a href="#forloops"><h3>6. For Loops</h3></a>
+<a href="#enum"><h3>7. Enums</h3></a>
+<a href="#switch"><h3>8. Switch</h3></a>
+<a href="#basicoperators"><h3>9. Basic Operators</h3></a>
+<a href="#optionals"><h3>10. Optionals</h3></a>  
 # Fundamentos
-## 1. Arrays
+## 1. Arrays<a name="arrays"></a>
 ### Un ```array``` es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
 - Defino el array con nombre ```ages``` que tiene enteros:  
     ```swift
     var ages: [Int] = [13, 24, 27, 45, 54]
     ```
+    > ```Int``` es el tipo de valor que hay dentro del ```array``` del ejemplo, pero puede ser cualquier tipo de información.  
+    > Puedo dejar el ```array``` vacío no poniendo nada entre los segundos ```[]```.
 - Cuento cuantos elementos hay en el array:  
     ```swift
     ages.count
@@ -60,16 +62,17 @@ Jorge se quiere ir de sistemas
     print(ages)
     ```  
 
-## 2. Sets
-### ```Set```s son como los ```array```s: una estructura de datos que almacena colecciones de datos, pero no puede tener elementos repetidos y no tiene orden.  
+## 2. Sets<a name="sets"></a>
+### ```Set```s son como los ```array```: una estructura de datos que almacena colecciones de datos, pero no puede tener elementos repetidos y no tiene orden.  
 
 - Declaro el set asi:  
     ```swift
     var agesSet: Set<Int> = []
     ```
+    > De nuevo, este ```set``` contiene ```Int```, que es lo que se indica dentro del ```<>```.
 - Defino el valor del set como una variable:  
     ```swift
-    var ages = [22, 22, 44, 66, 66, 77]
+    var ages = [22, 32, 44, 56, 66, 77]
     ```  
 - Importo un array a un set así:  
     ```swift
@@ -88,13 +91,13 @@ Jorge se quiere ir de sistemas
     print(agesSet)
     ```  
 
-## 3. Dictionary
+## 3. Dictionary<a name="dictionary"></a>
 ### Una base de datos, kinda
 - Defino que tipo de constante es y que contiene la constante:  
     ```swift
     let devices: [String: String]
     ```  
-    > Declaro que la constante ```devices``` tiene como tipo de ```key``` (nombre de la fila) un ```string``` (una palabra) y cuyo valor es de tipo ```string```.  
+    > Declaro que la constante ```devices``` (no importa que nombre tenga) tiene como tipo de ```key``` (nombre de la fila) un ```string``` (una palabra) y cuyo valor es de tipo ```string```.  
 - Añado valores al diccionario:  
     ```swift
     let devices: [String: String] = [
@@ -114,15 +117,15 @@ Jorge se quiere ir de sistemas
     ```
 
 
-## 4. Functions
+## 4. Functions<a name="functions"></a>
 
-- Como las funciones hacen algo, tienen que empezar con un verbo.  
-- Siempre tienen un parentesis al final porque ahi van los parametros, si los tuviera.
+- Las funciones hacen una operación con datos: necesitan nombrarse con un verbo y un texto descriptivo (para que el código sea legible).  
+- Siempre tienen un paréntesis al final porque ahí van los parametros, si los tuviera.
 - El ```scope``` es todo lo que haya entre los corchetes de la función.  
 - Esta función printeará lo que hay dentro del operando ```print```: 
     ```swift
     func printInstructorsName() {
-        print("jfalava")
+        print("nombre")
     }
     ```
     * Si quiero poner un valor dentro una variable uso el operando ```\("valor")```. 
@@ -131,17 +134,17 @@ Jorge se quiere ir de sistemas
     ```swift
     printInstructorsName()
     ```
-    >Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
+    Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
 
-- En este caso llamo a un ```string```:  
+- En este caso creo una función que llame a un ```string```:  
     ```swift
     func printInstructorsName(name: String) {
         print(name)
     }
     ```
-- Y llamo a la funcion indicándole que quiero printear el valor ```jfalava```:
+- Y llamo a la funcion indicándole que quiero printear el valor ```nombre```:
     ```swift
-    printInstructorsName(name: "jalava")
+    printInstructorsName(name: "nombre")
     ```
 
     >A mas generica la función, mejor, porque así puedo ser más flexible a la hora de llamarla para otros objetivos.
@@ -165,7 +168,7 @@ Jorge se quiere ir de sistemas
    > Llamo a la función y le doy los datos usando la etiqueta de parámetro.  
 - ¿Por que aparece ```firstNumber``` como etiqueta de argumento pero no ```secondNumber```?  
   - Porque ```secondNumber``` no es una etiqueta de argumento, sino un nombre de parámetro.  
-## 5. If .. Else
+## 5. If .. Else<a name="ifelse"></a>
 ### ```If``` y ```Else``` se usan para crear lógica en una operación.
 - Defino ```statement```s con el operando ```=```:  
     ```swift
@@ -215,7 +218,7 @@ Jorge se quiere ir de sistemas
         print("XDD")
     }
     ```
-## 6. For loops
+## 6. For loops<a name="forloops"></a>
 ### Un loop hecho con el operando ```for``` me permitirá trabajar con unos datos determinados un número de veces determinado.
 
 - Defino un array:
@@ -279,7 +282,7 @@ Jorge se quiere ir de sistemas
     1. Creo una variable llamada ```randomNumber``` y le asigno un valor aleatorio entre 0 y 100 dentro del ```scope```del loop, para que solo se ejecute entonces.
     1. Añado con ```append``` al array lo generado por la variable ```randomNumber```.
 
-## 7. Enum
+## 7. Enum<a name="enum"></a>
 ### Con ```enum``` puedo crear una tabla de datos cuyo contenido es fijo.
 - Defino la lista de ```enum```:  
     ```swift
@@ -349,7 +352,7 @@ Jorge se quiere ir de sistemas
     chills brother
     ```
 
-## 9. Switch
+## 8. Switch<a name="switch"></a>
 ### ```Switch``` me permitirá controlar el flujo de un programa dependiendo de una serie de condiciones dependiendo del valor de una variable.
 
 - Defino un ```enum``` que luego usaré para definir la función que contenga ```switch```:   
@@ -419,7 +422,7 @@ Jorge se quiere ir de sistemas
     nombreFuncion(from: nombreVariableLlamadaEnSwitch)
     ```
     > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
-## 10. Basic Operators
+## 9. Basic Operators<a name="basicoperators"></a>
 ### Operaciones aritméticas 101
 - Podemos hacer todo tipo de operaciones aritméticas en Swift. Primero, defino una serie de variables de ejemplo:
     ```swift
@@ -492,7 +495,7 @@ Jorge se quiere ir de sistemas
     ```
     > En el ejemplo anterior podemos recuperar el valor ```todasEdades``` con ```print(todasEdades)``` que devolverá ```[1, 2, 3, 99, 88, 77]```.
 
-## 11. Optionals
+## 10. Optionals<a name="optionals"></a>
 ### Métodos de protección para valores ```nil``` a la hora de operar con valores temporales.
 > Swift te da la opción de hacer cosas con valores vacios y retornos sin datos.  
 > Ojo: no podemos no hacer algo con valores vacios: esto provocará crasheos o runtime errors.
