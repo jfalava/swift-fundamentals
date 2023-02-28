@@ -16,47 +16,47 @@ Jorge se quiere ir de sistemas
 ## 1. Arrays
 ### Un ```array``` es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
 - Defino el array con nombre ```ages``` que tiene enteros:  
-    ```
+    ```swift
     var ages: [Int] = [13, 24, 27, 45, 54]
     ```
 - Cuento cuantos elementos hay en el array:  
-    ```
+    ```swift
     ages.count
     ```  
 - Compruebo cual es el primer valor del array:   
-    ```
+    ```swift
     ages.first
     ```  
 - Compruebo cual es el ultimo valor del array:   
-    ```
+    ```swift
     ages.last
     ```  
 - Compruebo cual es el tercer valor (0 es el primero) del array:  
-    ```
+    ```swift
     ages[2]
     ```  
 - Añado un nuevo valor (en este caso ```0```) al array:   
-    ```
+    ```swift
     ages.append(90)
     ```   
 - Añado un nuevo valor (en este caso ```65```) en la posición ```0``` en el array:  
-    ```
+    ```swift
     ages.insert(65, at: 0)
     ```  
 - Organizo el array de menor a mayor:  
-    ```
+    ```swift
     ages.sort()
     ```  
 - Organizo el array de mayor a menor:  
-    ```
+    ```swift
     ages.reverse
     ```   
 - Cambio el orden del array:  
-    ```
+    ```swift
     ages.shuffle()
     ```   
 - Reflejo el valor actual del array:  
-    ```
+    ```swift
     print(ages)
     ```  
 
@@ -64,39 +64,39 @@ Jorge se quiere ir de sistemas
 ### ```Set```s son como los ```array```s: una estructura de datos que almacena colecciones de datos, pero no puede tener elementos repetidos y no tiene orden.  
 
 - Declaro el set asi:  
-    ```
+    ```swift
     var agesSet: Set<Int> = []
     ```
 - Defino el valor del set como una variable:  
-    ```
+    ```swift
     var ages = [22, 22, 44, 66, 66, 77]
     ```  
 - Importo un array a un set así:  
-    ```
+    ```swift
     var agesSet = Set(ages)
     ```  
 - Inserto un item en el set así:  
-    ```
+    ```swift
     agesSet.insert(444)
     ```  
 - Compruebo si un valor existe en el set:  
-    ```
+    ```swift
     agesSet.contains(444)
     ```
  - Reflejo el valor actual del set:  
-    ```
+    ```swift
     print(agesSet)
     ```  
 
 ## 3. Dictionary
 ### Una base de datos, kinda
 - Defino que tipo de constante es y que contiene la constante:  
-    ```
+    ```swift
     let devices: [String: String]
     ```  
     > Declaro que la constante ```devices``` tiene como tipo de ```key``` (nombre de la fila) un ```string``` (una palabra) y cuyo valor es de tipo ```string```.  
 - Añado valores al diccionario:  
-    ```
+    ```swift
     let devices: [String: String] = [
         "telefono": "iPhone 13 Pro",
         "portatil": "2020 MacBook Pro",
@@ -105,11 +105,11 @@ Jorge se quiere ir de sistemas
     ]
     ```
 - Podemos indicar un valor vacío para el diccionario:  
-    ```
+    ```swift
     let devices: [String: String] = [:]
     ```  
 - Consulto el valor de una de las tablas del diccionario:  
-    ```
+    ```swift
     devices["telefono"]
     ```
 
@@ -120,26 +120,27 @@ Jorge se quiere ir de sistemas
 - Siempre tienen un parentesis al final porque ahi van los parametros, si los tuviera.
 - El ```scope``` es todo lo que haya entre los corchetes de la función.  
 - Esta función printeará lo que hay dentro del operando ```print```: 
-    ```
+    ```swift
     func printInstructorsName() {
         print("jfalava")
     }
     ```
-
+    * Si quiero poner un valor dentro una variable uso el operando ```\("valor")```. 
+  
 - Y llamo las funciones por su nombre y ```()```:  
-    ```
+    ```swift
     printInstructorsName()
     ```
     >Pero este ejemplo está hardcodeado. La verdadera chicha está en hacer algo multiusos que pueda llamarse de varias maneras.
 
 - En este caso llamo a un ```string```:  
-    ```
+    ```swift
     func printInstructorsName(name: String) {
         print(name)
     }
     ```
 - Y llamo a la funcion indicándole que quiero printear el valor ```jfalava```:
-    ```
+    ```swift
     printInstructorsName(name: "jalava")
     ```
 
@@ -147,7 +148,7 @@ Jorge se quiere ir de sistemas
 
 ### Segundo ejemplo
 - Quiero crear una función llamada ```add``` que va a realizar una operación matematica:
-    ```
+    ```swift
     func add(firstNumber: Int, to secondNumber: Int) -> Int {
         let sum = firstNumber + secondNumber
         return sum
@@ -158,7 +159,7 @@ Jorge se quiere ir de sistemas
   - ```firstNumber``` y ```secondNumber``` son las etiquetas de parámetros, las usaré para indicar que valores tomaran para la ejecucion de la función.  
   - El operando ```to``` es una etiqueta de argumento, que ayuda al codigo a ser más legible y que sera usada en el ```call site``` (la llamada de la función), cuando ejecute mi función. No requerida, si apreciada.  
 - Este es el ```call site```:
-    ```
+    ```swift
     add(firstNumber: 12, to: 38)
     ```
    > Llamo a la función y le doy los datos usando la etiqueta de parámetro.  
@@ -167,20 +168,20 @@ Jorge se quiere ir de sistemas
 ## 5. If .. Else
 ### ```If``` y ```Else``` se usan para crear lógica en una operación.
 - Defino ```statement```s con el operando ```=```:  
-    ```
+    ```swift
     var isDarkModeOn = false
     ```
   > Cuando nombremos ```bool```s, intentaremos que sea lo más descriptivo posible para que sea más legible.
 
 - El operando ```=``` usado dos veces seguidas se usa si para comprobar la validez de un ```statment```:  
-    ```
+    ```swift
     if isDarkModeOn == false {
         print("nay")
     }
     ```
 
 - Los ```if``` asumen que lo que haya dentro del ```scope``` es siempre ```true```:  
-    ```
+    ```swift
     if isDarkModeOn {
         print("yep")
     } else {
@@ -189,13 +190,13 @@ Jorge se quiere ir de sistemas
     ```
 ### Ejemplo
 - Primero defino una serie de variables:
-    ```
+    ```swift
     var myHighScore = 55
     var yourHighScore = 447
     var highScore = 1
     ```
-- Creo una regla lógica con ```ìf``` y ```else``` que hará una u otra cosa dependiendo del valor:
-    ```
+- Creo una regla lógica con ```if``` y ```else``` que hará una u otra cosa dependiendo del valor:
+    ```swift
     if myHighScore > yourHighScore {
         print("me")
     } else {
@@ -203,7 +204,7 @@ Jorge se quiere ir de sistemas
     }
     ```
 - Puedo anidar ```if```s que cogerán el valor y los compararán con varios supuestos:
-    ```
+    ```swift
     if highScore > 500 {
         print("nice")
     } else if highScore > 250 {
@@ -218,7 +219,7 @@ Jorge se quiere ir de sistemas
 ### Un loop hecho con el operando ```for``` me permitirá trabajar con unos datos determinados un número de veces determinado.
 
 - Defino un array:
-    ```
+    ```swift
     let allStars = ["kekw", "lul", "xdd", "Concern", "xffing"]
     ```
     > Swift no necesita en este caso que le indique que es un array de ```string```s; al ver que todo son palabras.  
@@ -226,7 +227,7 @@ Jorge se quiere ir de sistemas
     > No necesitas indicar que clase de cosas printeas, pero lo haces más legible si pones nombres que indican.
 
 - El siguiente loop leerá todo el array desde el principio, item por item:
-    ```
+    ```swift
     for emote in allStars {
         print(emote)
     }
@@ -234,7 +235,7 @@ Jorge se quiere ir de sistemas
     > Aquí le pido que printee el contenido del array. Como no le doy parada, lo hará hasta que termine de leerlo todo.
 
 - Puedo pedirle que prinéee algo en especifico:
-    ```
+    ```swift
     for emote in allStars where emote == "xdd" {
         print(emote)
     }
@@ -242,21 +243,21 @@ Jorge se quiere ir de sistemas
     > ```emote``` puede ser cualquier palabra, al ser un nombre de parámetro.  
 
 - Si quiero leer un array un numero determinado de veces, usare un rango (siendo n el valor posicional del array):
-    ```
+    ```swift
     0...n
     ```  
     Que leerá desde el primer valor hasta el valor n  
-    ```
+    ```swift
     0..>n
     ```
     Que leerá desde el valor 0 hasta el valor posterior a n
-    ```
+    ```swift
     0..<n
     ```
     Que leerá desde el valor 0 hasta el valor anterior a n  
 
 - El siguiente codigo printeará todos los valores del array ```i``` hasta llegar a la posición 24:
-    ```
+    ```swift
     for i in 0..<25 {
         print(i)
     }
@@ -265,7 +266,7 @@ Jorge se quiere ir de sistemas
 
 - Puedo hacer mas cosas con este array, por ejemplo:
   - Crear un array vacio y crear un loop donde, con una función de numeros aleatorios, generar un número aleatorio y añadirlo al array una cantidad determinada de veces:
-    ```
+    ```swift
     var randomInts: [Int] = []
     for _ in 0..<25 {
         let randomNumber = Int.random(in: 0...100) 
@@ -281,7 +282,7 @@ Jorge se quiere ir de sistemas
 ## 7. Enum
 ### Con ```enum``` puedo crear una tabla de datos cuyo contenido es fijo.
 - Defino la lista de ```enum```:  
-    ```
+    ```swift
     enum Emotes {
         case kekw
         case Concern
@@ -291,13 +292,13 @@ Jorge se quiere ir de sistemas
     }
     ```
 - Puedo hacerlo tambien separando los valores de ```case``` por comas:
-    ```
+    ```swift
     enum Emotes { case kekw, Concern, xdding, xffing, xddTree } 
     ```
 
  - ```enum``` puede considerarse un nuevo tipo de dato, como ```Int``` o ```String``` a la hora de definirlo en otra parte del código.
  - Puedo llamarlo en una funcion:
-    ```
+    ```swift
     func getOpinion(on emote: Emotes) {
         if emote == .kekw {
             print("bien")
@@ -313,13 +314,13 @@ Jorge se quiere ir de sistemas
     }
     ```
 - Y puedo llamarlo utilizando ```.valordelcase```:
-    ```
+    ```swift
     getOpinion(on: .xddTree)
     ```
 ### rawValue
 - Defino el ```enum```:
     > Para darle un valor a cada ```case``` uso el operando ```= "contenido"```, incluidas comillas.
-    ```
+    ```swift
     enum Emotes: String {
         case kekw       = "bien"
         case Concern    = "dalamud?"
@@ -332,7 +333,7 @@ Jorge se quiere ir de sistemas
     > - Todos los ```enum``` tienen que tener el mismo tipo de valor.
     > - Puedo identar el código para que sea mas legible, no afecta a la ejecución.
 - Para llamar al ```enum``` puedo crear una función:  
-    ```
+    ```swift
     func getOpinion(on emote: Emotes){
         print(emote.rawValue)
     }
@@ -340,11 +341,11 @@ Jorge se quiere ir de sistemas
     En este caso, la funcion ```getOpinion``` cogerá del ```enum``` llamado ```Emotes``` el valor del ```case``` que le pida cuando la llame, printeando su ```rawValue```, que hemos definido al escribir el ```enum```.
  
   Y después llamarla:  
-    ```
+    ```swift
     getOpinion(on: .xddTree)
     ```
     Que me printeará el valor del contenido del ```case```:
-    ```
+    ```swift
     chills brother
     ```
 
@@ -352,7 +353,7 @@ Jorge se quiere ir de sistemas
 ### ```Switch``` me permitirá controlar el flujo de un programa dependiendo de una serie de condiciones dependiendo del valor de una variable.
 
 - Defino un ```enum``` que luego usaré para definir la función que contenga ```switch```:   
-    ```
+    ```swift
     enum Emotes {
         case kekw
         case Concern
@@ -362,7 +363,7 @@ Jorge se quiere ir de sistemas
     }
     ``` 
 - Con este ```enum``` creo una función con llamada ```getOpinion``` con el operando ```switch```:
-    ```
+    ```swift
     func getOpinion(on emote: Emotes){
         switch emote {
         case .kekw:
@@ -379,14 +380,14 @@ Jorge se quiere ir de sistemas
     }
     ```
     Esta función, que será llamada con:
-    ```
+    ```swift
     nombreFuncion(nombreArgumento: .valorDelCase)
     ```
      Devolverá el valor que hay en el ```scope``` de cada ```case```, en este caso una función ```print```.
     > En el ejemplo, ```getOpinion(on: .xddTree)``` devolverá ```print("chills brother")```.
  
 - Puedo crear un ```switch``` sin un ```enum```, pero necesito indicar todos los posibles modos:  
-    ```
+    ```swift
     let matchmakingRank = 856
     func determinePlayerLeague(from rank: Int) {
         switch rank {
@@ -409,24 +410,24 @@ Jorge se quiere ir de sistemas
     > En el caso de tener disponible un ```enum``` que comprobar, se cuantos ```case``` tiene que haber.
     
     En el caso del segundo ejemplo, donde no hay un ```enum``` donde mirar, tengo que definir un valor por defecto:
-    ```
+    ```swift
     default
     ```  
     No tener un valor por defecto y la función recibir algún tipo de valor que no se incluya provocará un fallo de runtime.  
     Podemos llamar a la función con:
-    ```
+    ```swift
     nombreFuncion(from: nombreVariableLlamadaEnSwitch)
     ```
     > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
 ## 10. Basic Operators
 ### Operaciones aritméticas 101
 - Podemos hacer todo tipo de operaciones aritméticas en Swift. Primero, defino una serie de variables de ejemplo:
-    ```
+    ```swift
     let valueOne = 55
     let valueTwo = 88
     ``` 
 - Si sabemos que el resultado no es entero, hay que indicar que son ```floats``` o ```double```, y los dos valores tienen que ser iguales:
-    ```
+    ```swift
     let valueOneone: Double = 55
     let valueTwotwo: Double = 88
     ```
@@ -434,24 +435,24 @@ Jorge se quiere ir de sistemas
 
 
 - Si hacemos operaciones aritméticas con enteros, si la operación tiene decimales, Swift ignorará todos los decimales y solo mostrará el entero:  
-    ```
+    ```swift
     let sum = valueOneone / valueTwotwo
     let div = valueOne / valueTwo
     ```
     > El nombre de la constante no importa, pero está bien que sea descriptivo para que el código sea más legible.
 
 - ```modulo``` es un operando que saca el resto de una división:
-    ```
+    ```swift
     let modulo = valueOne % valueTwo
     ```
 - El operando ```==``` compara dos valores. Los valores tienen que ser del mismo tipo: (```int```, ```double```, ```float```...):  
-    ```
+    ```swift
     valueTwo == valueOne
     ```
 
 - Con el operando ```!``` antes de una constante podemos comprobar si algo es lo contrario.  
 - Podemos asignar a una variable un valor ```bool``` y Swift sabrá responder en consecuencia cuando se le pregunte:  
-    ```
+    ```swift
     var isDarkModeOn = false
     if !isDarkModeOn {
         print("pero co animal")
@@ -461,22 +462,22 @@ Jorge se quiere ir de sistemas
 
 
 - Comparaciones usando el operando ```if``` tienen que ser tambien del mismo tipo. Podemos también encadenarlo con ```bool```s:  
-    ```
+    ```swift
     if valueTwo > valueOne && !isDarkModeOn {
         print("quelocura")
     }
     ```
     > Si ```valueTwo``` es mayor que ```valueOne``` y además ```isDarkModeOn``` es ```false``` (gracias a que Swift ya lo sabe) printeará el valor indicado.  
 - Podemos definir un ```if``` donde sólo una de las condiciones sea verdad con el operando ```||```:
-    ```
+    ```swift
     if valueOne == valueTwo || !isDarkModeOn {
         print("yep")
     }
     ```
-    > En este ejemplo, a diferencia del anterior, si los dos ```value``` son iguales O ```isDarkModeOn``` es ```false```printeará el valor indicado.  
+    > En este ejemplo, a diferencia del anterior, si los dos ```value``` son iguales O ```isDarkModeOn``` es ```false``` printeará el valor indicado.  
 
 - Podemos añadir y quitar con los operandos ```+``` y ```-``` otro tipo de operandos, como ```strings```:
-    ```
+    ```swift
     let saludo = "Hi"
     let nombre = "jorge"
     print(saludo + " " + nombre)
@@ -484,7 +485,7 @@ Jorge se quiere ir de sistemas
     > Si quiero un espacio, como en el ejemplo anterior, lo añado como si fuera un ```string``` cualquiera, entre comillas. El ejemplo devolverá ```"Hi jorge"```.
     
 - También podemos realizar este tipo de operaciones con ```array```s:
-    ```
+    ```swift
     let edadViejo = [99, 88, 77]
     let edadJoven = [1, 2, 3]
     let todasEdades = edadJoven + edadViejo
@@ -496,15 +497,15 @@ Jorge se quiere ir de sistemas
 > Swift te da la opción de hacer cosas con valores vacios y retornos sin datos.  
 > Ojo: no podemos no hacer algo con valores vacios: esto provocará crasheos o runtime errors.
 - Defino una variable para el ejemplo:
-    ```
+    ```swift
     var ages: [Int] = []
     ```
 - Además lo organizamos de manera ascendente:
-    ```
+    ```swift
     ages.sort()
     ```
 - Creo una constante donde los valores del ```array``` están organizados:
-    ```
+    ```swift
     let oldestAge = ages.last
     ```
      > Como en el ejemplo el ```array``` está vacío devolverá ```nil``` al ejecutarse.  
@@ -513,25 +514,26 @@ Jorge se quiere ir de sistemas
 
 ### ```If let```
 - Primero compruebo si los valores que busco son los correctos para lo que quiero hacer:
-    ```
+    ```swift
     if let oldestAge = ages.last  {
         print("The oldest age is \(oldestAge)")
     } else {
         print("no hay valores en el array")
     }
     ```
-    * Este ejemplo nunca mostrará datos porque el ```array``` está vacío.  
-    * Si quiero poner un valor dentro una variable uso el operando ```\()```.  
+    * Este ejemplo nunca mostrará datos porque el ```array``` está vacío.   
     * Si el ```array``` tuviera valores, habría printeado ```"The oldest age is [valor del array]"```, pero en este caso printeará ```"no hay valores en el array"```.  
 
 ### Dándole un valor a la variable en caso de que este sea ```nil```:
-    ```
+  - De esta manera le damos un valor por defecto nosotros mismos. Esta solución no impide al programa leer el programa en su totalidad: 
+    ```swift
     if let oldestAge = ages.last ?? 999
     ```
     
 ### Con el operando ```guard```:
+- ```guard``` permite transferir el control del programa cuando no recibe las condiciones que necesita para funcionar:
 
-    ```
+    ```swift
     func getOldestAge() {
         guard let oldestAge = ages.last else {
             return print("nope")
@@ -539,13 +541,14 @@ Jorge se quiere ir de sistemas
         print("\(oldestAge) es el mas viejo")
     }
     ```
-    > Llamaremos a la función con ```getOldestAge()```.  
-    > En el caso de que sea ```nil```, directamente detiene la ejecución del código y ejecuta lo que haya en el ```scope``` de ```return```.  
-    > Y si hay algo diferente a un valor ```nil``` ignorará el contenido del ```scope``` de ```return``` (en este caso, ```print (nope)```) y ejecutará lo que haya en el segundo ```scope```
+    > - Llamaremos a la función con ```getOldestAge()```.  
+    > - En el caso de que sea ```nil```, directamente detiene la ejecución del código y ejecuta lo que haya en el ```scope``` de ```return```.  
+    > - Y si hay algo diferente a un valor ```nil``` ignorará el contenido del ```scope``` de ```return``` (en este caso, ```print (nope)```) y ejecutará lo que haya en el segundo ```scope```
     
-### Usando el protocolo ```force unwrap```: usando el valor del ```array sin importar que sea.
+### Usando ```"force unwrap"```:
+- Usando el valor del ```array``` sin importar que sea.
     - Usaremos el el operando ```!``` al final del valor.
-    - Si el valor es ```nil```, provocará un runtime error y el programa crasheará.  
-    ```
+    - Si el valor es ```nil``` y el programa no sabe como tratarlo, provocará un runtime error y el programa crasheará.  
+    ```swift
     let oldestAges = ages.last!
     ```
