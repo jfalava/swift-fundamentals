@@ -540,7 +540,7 @@ getOldestAge()
 > En el caso de que sea ```nil```, directamente detiene la ejecución del código y ejecuta lo que haya en el ```scope``` de ```return```  
 > Y si hay algo diferente a un valor ```nil``` ignorará el contenido del ```scope``` de ```return``` (en este caso, ```print (nope)```) y ejecutará lo que haya en el segundo ```scope```
 ### Usando el protocolo ```force unwrap```: usando el valor del array sin importar que sea
-Usaremos el el operando ```!``` al final del valor.
+- Usaremos el el operando ```!``` al final del valor.
 - Si el valor es ```nil```, provocará un runtime error y el programa crasheará.  
 ```
 let oldestAges = ages.last!
