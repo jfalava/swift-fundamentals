@@ -20,7 +20,7 @@ The basics.
     ```
     > ```Int``` es el tipo de valor que hay dentro del ```array``` del ejemplo, pero puede ser cualquier tipo de información: (```float```, ```Double```, ```String```, otras variables y constantes que pueden ser insertadas usando ```.append```...).  
 
-    > Puedo dejar el ```array``` vacío no poniendo nada entre los segundos ```[]```.
+    > Puedo dejar el ```array``` vacío dejando ```[]``` en blanco.
 - Para contar elementos hay en el ```array```:  
     ```swift
     ages.count
