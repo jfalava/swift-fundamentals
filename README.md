@@ -10,5 +10,3 @@ No, esto solo son mis apuntes.
   > La base de conocimientos principal de estos documentos. Todos mis ❤️ al creador.
 * [Markdown Guide](https://www.markdownguide.org/)  
   > La guía y manual para diseñar y organizar todos estos documentos.
-* [Markdown to PDF](https://md2pdf.netlify.app/)
-  > La herramienta para exportar a un formato más amigable todos estos documentos.
