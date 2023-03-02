@@ -14,7 +14,7 @@ The basics.
 # Fundamentos
 ## 1. Arrays<a name="arrays"></a>
 ### Un ```array``` es una estructura de datos que puede almacenar colecciones de elementos del mismo tipo.  
-- Para definir un ```array``` con nombre ```ages``` que tiene enteros:  
+- Ejemplo: defino un ```array``` con nombre ```ages``` que tiene enteros:  
     ```swift
     var ages: [Int] = [13, 24, 27, 45, 54]
     ```
