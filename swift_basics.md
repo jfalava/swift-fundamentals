@@ -133,11 +133,11 @@ The basics.
         print("nombre")
     }
     ```
-    * Si quiero poner un valor dentro una variable uso el operando ```\("valor")```:
+    * Si quiero insertar algo que puede cambiar, como una variable, dentro de otra variable, uso el operando ```\()```,:
         ```swift
-        var name: String = "test"
+        var queso: String = "test"
         func printInstructorsName() {
-            print("nombre es \(name)")
+            print("nombre es \(queso)")
         }
         get printInstructorsName() // Devolverá "nombre es test"
         ```
