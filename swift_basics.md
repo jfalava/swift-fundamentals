@@ -148,13 +148,13 @@ The basics.
     ```
     Pero este ejemplo está *hardcoded*. El verdadero potencial está en hacer algo multiusos que pueda llamarse de varias maneras con diferentes objetivos.
 
-- En este caso creo una función que llame a un ```string```:  
+- En este caso creo una función que solicite a un ```string```:  
     ```swift
     func printInstructorsName(name: String) {
         print(name)
     }
     ```
-- Y llamo a la funcion indicándole que quiero printear el valor ```nombre```:
+- Y llamo a la función indicándole que quiero printear un ```string``` con el valor ```nombre```:
     ```swift
     printInstructorsName(name: "nombre")
     ```
