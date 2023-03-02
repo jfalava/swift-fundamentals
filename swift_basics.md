@@ -135,11 +135,11 @@ The basics.
     ```
     * Si quiero poner un valor dentro una variable uso el operando ```\("valor")```:
         ```swift
-        var name: String = "nombre"
+        var name: String = "test"
         func printInstructorsName() {
-            print("nombre es \(name)")
+            print("nombre es \(test)")
         }
-        get printInstructorsName()
+        get printInstructorsName() // Devolverá "nombre es test"
         ```
   
 - Y llamo las funciones por su nombre y ```()```:  
