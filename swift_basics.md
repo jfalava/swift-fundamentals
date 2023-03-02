@@ -69,34 +69,34 @@ The basics.
 ## 2. Sets<a name="sets"></a>
 ### ```Set``` es como ```array```: una estructura de datos que almacena colecciones de datos, pero cuya diferencia es que no puede tener elementos repetidos y no tiene orden.  
 
-- Declaro el ```set``` asi:  
+- Ejemplo: declaro un ```set``` asi:  
     ```swift
     var agesSet: Set<Int> = []
     ```
     > De nuevo, este ```set``` contiene ```Int```, que es lo que se indica dentro del ```<>```.
-- Defino el valor del set como una variable:  
+- Puedo darle valores al ```set``` usando una variable:  
     ```swift
     var ages = [22, 32, 44, 56, 66, 77]
     ```  
-- Importo un array a un ```set``` así:  
+- Puedo importar un ```array``` a un ```set``` así:  
     ```swift
     var agesSet = Set(ages)
     ```  
-- Inserto un item en el ```set``` así:  
+- Puedo insertar un item en el ```set``` así:  
     ```swift
     agesSet.insert(444)
     ```  
-- Compruebo si un valor existe en el ```set```:  
+- Así compruebo si un valor existe en el ```set```:  
     ```swift
     agesSet.contains(444)
     ```
- - Reflejo el valor actual del ```set```:  
+ - Así puedo reflejar el valor actual del ```set``` usando ```print```:  
     ```swift
     print(agesSet)
     ```  
 
 ## 3. Dictionary<a name="dictionary"></a>
-### Una base de datos, kinda
+### Una base de datos, kinda.
 - Ejemplo: defino que tipo de constante es y que contiene la constante:  
     ```swift
     let devices: [String: String]
@@ -111,20 +111,21 @@ The basics.
         "sobremesa": "Ryzen 5800x w/ nVIDIA RTX 3070 & 32GB RAM",
     ]
     ```
-- Podemos indicar un valor vacío para el diccionario:  
+- Podemos indicar así un valor vacío para el diccionario:  
     ```swift
     let devices: [String: String] = [:]
     ```  
-- Consulto el valor de una de las tablas del diccionario:  
+- Puedo consultar el valor de una de las tablas del diccionario insertando:  
     ```swift
     devices["telefono"]
     ```
+    En un operando, como una variable o llamarlo con ```print```.
 
 
 ## 4. Functions<a name="functions"></a>
 
-- Las funciones hacen una operación con datos: necesitan nombrarse con un verbo y un texto descriptivo (para que el código sea legible).  
-- Siempre tienen un paréntesis al final porque ahí van los parametros, si los tuviera.
+- Las funciones hacen una operación con datos, por lo que las intentaremos nombrar con un verbo y un texto descriptivo (para que el código sea legible).  
+- Siempre tienen un paréntesis al final porque ahí van los parámetros, si los tuviera.
 - El ```scope``` es todo lo que haya entre los corchetes de la función.  
 - Esta función de ejemplo printeará lo que hay dentro del operando ```print```: 
     ```swift
@@ -329,11 +330,11 @@ The basics.
         }
     }
     ```
-- Y puedo llamarlo utilizando ```.valordelcase```:
+- Y puedo llamar a la función, que ejecutará todo lo que haya en su ```scope``` teniendo en cuenta el valor de ```.valordelcase```:
     ```swift
     getOpinion(on: .xddTree)
     ```
-### ```rawValue```: una propiedad de ```enum``` que me permite acceder a un valor incluido en un ```case```
+### ```rawValue``` es una propiedad de ```enum``` que me permite acceder a un valor incluido en un ```case```.
 - Ejemplo: defino el ```enum```:
     > Para darle un valor a cada ```case``` uso el operando ```= "contenido"```, incluidas comillas.
     ```swift
@@ -345,7 +346,7 @@ The basics.
         case xddTree    = "chills brother"
     } 
     ```
-    - Para usar ```rawValue``` los ```enum```s pueden tener tipos de valores de todo tipo, por ejemplo, ```string```, ```Int```, ```float```... y necesitan ser definidos.  
+    - Para usar ```rawValue``` los ```enum``` pueden tener tipos de valores de todo tipo, por ejemplo, ```string```, ```Int```, ```float```... y necesita ser definido (en este ejemplo, el contenido de ```Emotes``` son ```string```).  
     - Todos los ```enum``` tienen que tener el mismo tipo de valor.
     - Puedo identar el código para que sea mas legible, no afecta a la ejecución.  
   
@@ -409,15 +410,15 @@ The basics.
     func determinePlayerLeague(from rank: Int) {
         switch rank {
         case 0:
-            print ("Play the game to determine your league")
+            print ("Juega para determinar tu ELO")
         case 1..<50:
-            print ("You are in BRONZE League")
+            print ("Bronze andy")
         case 50..<100:
-            print ("You are in SILVER League")
+            print ("Silver andy")
         case 100..<200:
-            print ("You are in GOLD League")
+            print ("Gold andy")
         default:
-            print ("You are in a league of your own. We don't know where you are")
+            print ("Eres tope bueno")
         }
     }
     ```
@@ -428,12 +429,12 @@ The basics.
     
     En el caso del segundo ejemplo, donde no hay un ```enum``` donde mirar, tengo que definir un valor por defecto:
     ```swift
-    default
+    default:
     ```  
     No tener un valor por defecto y la función recibir algún tipo de valor que no se incluya provocará un runtime error.  
     Podemos llamar a la función con:
     ```swift
-    nombreFuncion(from: nombreVariableLlamadaEnSwitch)
+    nombreFuncion(etiquetaArgumento: nombreVariableLlamadaEnSwitch)
     ```
     > En el caso del ejemplo, usaremos la función ```determinePlayerLeague(from: matchmakingRank)```
 ## 9. Basic Operators<a name="basicoperators"></a>
