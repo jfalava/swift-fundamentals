@@ -18,7 +18,11 @@ The basics.
     ```swift
     var ages: [Int] = [13, 24, 27, 45, 54]
     ```
-    > ```Int``` es el tipo de valor que hay dentro del ```array``` del ejemplo, pero puede ser cualquier tipo de información: (```float```, ```Double```, ```String```, otras variables y constantes que pueden ser insertadas usando ```.append```...).  
+    > Los ```array``` necesitan ser nombrados para poder referirse a ellos en otras partes del código: será declarado despues de ```var```.
+
+    > Pueden almacenar todo tipo de información siempre y cuando sea posible comparar sus valores (```Equatable Protocol```). Por ejemplo: ```float```, ```Double```, ```String```... y otras variables y constantes que pueden ser insertadas usando ```.append```. 
+
+    - En este ejemplo, el ```array``` contiene ```Int```.  
 
     > Puedo dejar el ```array``` vacío dejando ```[]``` en blanco.
 - Para contar elementos hay en el ```array```:  
