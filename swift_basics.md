@@ -137,7 +137,7 @@ The basics.
         ```swift
         var name: String = "test"
         func printInstructorsName() {
-            print("nombre es \(test)")
+            print("nombre es \(name)")
         }
         get printInstructorsName() // Devolverá "nombre es test"
         ```
