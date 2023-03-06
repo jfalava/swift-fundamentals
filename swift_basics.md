@@ -568,3 +568,93 @@ The basics.
     ```swift
     let oldestAges = ages.last!
     ```
+      
+## 11. Self
+### ```Self``` es un operando que indica al programa que a lo que se refiere es a un ítem en su propio ```scope``` que ha sido propagado de un valor que ya se ha definido:
+  * Ejemplo:
+    ```swift
+    class Developer {
+        var name: String
+        var jobTitle: String
+        var yearsExp: Int
+
+        init (name: String, jobTitle: String, yearsExp: Int) {
+            self.name       = name
+            self.jobTitle   = jobTitle
+            self.yearsExp   = yearsExp
+        }
+    }
+    ```
+    * En el ejemplo, hay varios ```name```. Deberían tener nombres diferentes para que el programa no los confunda, pero Swift sabe a que se refiere cada ```name``` y su función dentro del programa gracias a ```self```.  
+
+        > El valor de ```name``` que hay dentro del ```scope``` de ```init``` es el valor que toma de la variable que se ha definido al principio y que luego le he preguntado (cuando llamo al programa con ```init``` y le digo que ```name``` es un ```string```):  
+        ```swift
+        init (name: String,...
+        ```
+
+## 12. Class
+### ```class``` son objetos que pueden contener todo tipo de valores y que pueden ser ejecutados.
+* En esencia, ```class``` requiere de un nombre, contenido dentro de su ```scope``` y una manera de llamarla:
+    ```swift
+    class Dev {
+        var name: String
+        var trabajoTitulo: String
+        var anosExp: Int
+        
+        init (name: String, trabajoTitulo: String, yearsExp: Int) {
+            self.name           = name
+            self.trabajoTitulo  = trabajoTitulo
+            self.anosExp        = yearsExp
+        }
+    }
+    ```
+* En este ejemplo, creo una ```class``` con nombre ```Dev``` que contiene valores (en este caso información) que puede ser llamada con ```init``` dándole los datos que contienen las variables predefinidas.  
+  
+  Podemos con estos datos crear un nuevo objeto:
+    ```swift
+    let desarrollador = Dev (name: "nombre", jobTitle: "puesto de trabajo", yearsExp: 1)
+    ```
+  Y llamarlo en otra parte del código:  
+  > ```desarrollador.name``` devolverá "```nombre```"  
+  > ```desarrollador.jobTitle``` devolverá "```puesto de trabajo```"  
+  > ```desarrollador.yearsExp``` devolverá "```1```"  
+
+ * En caso de no querer darle unos valores en la llamada, podemos definir un ```init``` vacío que no requiera de datos previos:
+    ```swift
+    init() {}
+    ```
+    Y podemos darle unos valores más adelante:
+    ```swift
+    let test = Dev ()
+    test.name = " Joe"
+    test.jobTitle = "Coder"
+    test.yearsExp = 10
+    ```
+    Es importante que indiquemos que los valores que definimos al principio (por ejemplo, que ```name``` es un ```string```) son opcionales con el operando ```?```:
+    ```swift
+    class Dev {
+        var name: String?
+        ...
+    ```
+* Podemos incluir funciones y llamarlas.  
+  Ejemplo:
+  ```swift
+  ...
+  init (name: String, trabajoTitulo: String, yearsExp: Int) {
+    ...
+  }
+  init () {}
+
+  func speakName() {
+    print(name!)
+  }
+  ```
+  > Utilizo ```force unwrap``` aquí porque, en caso de no darle información, nos devolverá un ```nil``` y si le damos algo de información nos devolverá un "opcional" y el valor que le hayamos dado.  
+  Con ```!``` después de ```print``` solo nos printeará un valor que nosotros le hayamos dado y no un default.  
+
+  Al llamar a esta función (dándole o no información al ```init```):
+  ```swift
+  let testdos = Dev(name: "nombrecito", jobTitle:"puestecito", yearsExp: 123)
+  testdos.speakName()
+  ```
+  Nos devolverá el valor de ```name``` printeado (en este caso, "```nombrecito```")
