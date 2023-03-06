@@ -649,11 +649,12 @@ The basics.
     print(name!)
   }
   ```
-  > Utilizo ```force unwrap``` aquí porque, en caso de no darle información, nos devolverá un ```nil``` y si le damos algo de información nos devolverá un "opcional" y el valor que le hayamos dado.  
+  > Utilizo ```force unwrap``` en este ejemplo porque, en caso de no darle información, nos devolverá un ```nil``` y si le damos algo de información nos devolverá un "opcional" y el valor que le hayamos dado.  
   Con ```!``` después de ```print``` solo nos printeará un valor que nosotros le hayamos dado y no un default.  
 
   Al llamar a esta función (dándole o no información al ```init```):
   ```swift
+  ...
   let testdos = Dev(name: "nombrecito", jobTitle:"puestecito", yearsExp: 123)
   testdos.speakName()
   ```
